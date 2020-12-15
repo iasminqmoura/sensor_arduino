@@ -8,8 +8,10 @@ int outputValue = 0;
 int outputValue2 = 0;*/
 
 void setup() {
-  pinMode(analogPin[4], OUTPUT);
-  Serial.begin(115200); 
+  for (int i = 0; i<4; ++i){
+    pinMode(analogPin[i], OUTPUT); 
+  }
+  Serial.begin(115200);
 }
 
 void loop() {
@@ -43,10 +45,9 @@ void loop() {
   for (int i = 0; i<4; ++i){
     sensorValue = analogRead(analogPin[i]);
     outputValue = map(sensorValue, 0, 1023, 0, 255);
+    Serial.print("sensor = ");
+    Serial.print(sensorValue);
   }
-  
-   Serial.print("sensor = ");
-   Serial.print(sensorValue);
-   
+
   delay(2);
 }
