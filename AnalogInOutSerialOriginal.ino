@@ -19,13 +19,15 @@ void loop() {
   digitalWrite(3, HIGH);
   digitalWrite(4, LOW);
   digitalWrite(5, LOW);*/
+ 
   for (int i = 0; i<4; ++i){
-    if (digitalPin[i] == HIGH){
+    digitalWrite(digitalPin[i], HIGH);
+    /*if (digitalPin[i] == HIGH){
       digitalWrite(digitalPin[i], LOW);
     }
     else{
       digitalWrite(digitalPin[i], HIGH);
-    }
+    }*/
   }
   
   /*sensorValue = analogRead(A0);
